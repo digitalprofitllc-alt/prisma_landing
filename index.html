@@ -307,7 +307,7 @@
        FOOTER
        ======================================== */
     footer {
-      background: #e5f2f4; /* Fondo celeste claro */
+      background: #e5f2f4;
       background-image: url('assets/images/fondo-footer.jpg');
       background-size: cover;
       background-position: center;
@@ -426,9 +426,14 @@
     }
 
     /* ========================================
-       MEDIA QUERIES
+       MEDIA QUERIES (Responsive)
        ======================================== */
     @media (max-width: 768px) {
+      .brand-logos {
+        flex-direction: column;
+        gap: 20px;
+      }
+
       .course-info {
         flex-direction: column;
       }
@@ -437,7 +442,54 @@
         max-width: 100%;
       }
 
+      .hero h1 {
+        font-size: 2.3em;
+      }
+
       .hero p {
+        font-size: 1.2em;
+      }
+
+      .btn, .btn-about {
+        padding: 12px 30px;
+        font-size: 1em;
+      }
+
+      /* Footer responsive */
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-icon {
+        margin-bottom: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 100px 15px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .container {
+        width: 95%;
+        padding: 0 15px;
+      }
+
+      footer h3 {
+        font-size: 1.5em;
+      }
+
+      .social-links {
         font-size: 1.2em;
       }
     }
@@ -467,8 +519,7 @@
     <div class="course-info">
       <div class="course-text">
         <h2>¿Qué aprenderás?</h2>
-        <p>Este curso está pensado para quienes trabajan con datos, independientemente de sus conocimientos técnicos o analíticos.</p>
-        <p>Aprenderás a:</p>
+        <p>Este curso está pensado para quienes trabajan con datos, independientemente de sus conocimientos técnicos o analíticos. Aprenderás a:</p>
         <ul>
           <li><strong>Utilizar Dataiku</strong>, una de las plataformas más potentes para Inteligencia Artificial y Machine Learning de bajo código y de autoservicio.</li>
           <li><strong>Domina la investigación y estructura de proyectos</strong> con políticas de Gobierno AI.</li>
@@ -558,7 +609,7 @@
       </div>
 
       <div class="copyright">
-        © 2025 Todos los derechos reservados | Prisma Análisis |  Creado por Digital.Profit.Llc
+        © 2025 Todos los derechos reservados | Prisma Análisis |Desarrollado por Digital.Profit.Llc
       </div>
     </div>
   </footer>
