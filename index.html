@@ -36,21 +36,12 @@
       margin: 0 auto;
     }
 
-    .logo-prisma {
-      width: 180px;
+    .logo-img {
       height: 50px;
-      background: url('https://prismanalisis.com/wp-content/uploads/2022/05/logo-prisma-analisis.svg') no-repeat center;
-      background-size: contain;
+      width: auto;
     }
 
-    .logo-dataiku {
-      width: 160px;
-      height: 40px;
-      background: url('https://www.dataiku.com/dku-static/logo.svg') no-repeat center;
-      background-size: contain;
-    }
-
-    /* Header principal */
+    /* Header */
     header {
       background-color: #e5f2f4;
       padding: 20px 0;
@@ -68,8 +59,8 @@
     }
 
     .logo-container .logo {
-      width: 120px;
       height: 50px;
+      width: auto;
       background: url('https://prismanalisis.com/wp-content/uploads/2022/05/logo-prisma-analisis.svg') no-repeat center;
       background-size: contain;
     }
@@ -123,7 +114,6 @@
       font-weight: bold;
       font-size: 1.1em;
       transition: all 0.3s ease;
-      border: none;
     }
 
     .btn:hover {
@@ -144,11 +134,6 @@
       flex-wrap: wrap;
       gap: 40px;
       align-items: flex-start;
-    }
-
-    .course-text {
-      flex: 1;
-      min-width: 300px;
     }
 
     .course-text h2 {
@@ -220,6 +205,12 @@
     }
 
     /* Botón Acerca de Nosotros */
+    .container-about {
+      text-align: center;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
     .btn-about {
       display: inline-block;
       background-color: #003366;
@@ -229,19 +220,12 @@
       font-weight: 600;
       text-decoration: none;
       border-radius: 6px;
-      transition: background 0.3s ease;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .btn-about:hover {
       background-color: #00254d;
       transform: translateY(-2px);
-    }
-
-    .container-about {
-      text-align: center;
-      margin: 60px auto;
-      padding: 20px;
     }
 
     /* Formulario de Google */
@@ -379,8 +363,8 @@
   <!-- Barra de marcas (logos arriba) -->
   <div class="brand-bar">
     <div class="brand-logos">
-      <div class="logo-prisma"></div>
-      <div class="logo-dataiku"></div>
+      <img src="https://prismanalisis.com/wp-content/uploads/2022/05/logo-prisma-analisis.svg" alt="Logo Prisma Análisis" class="logo-img">
+      <img src="https://www.dataiku.com/dku-static/logo.svg" alt="Logo Dataiku" class="logo-img">
     </div>
   </div>
 
@@ -426,7 +410,7 @@
 
     <!-- Imagen del flujo de trabajo -->
     <div class="flow-diagram">
-      <img src="https://prismanalisis.com/wp-content/uploads/2023/10/flujo-dataiku.jpg" alt="Flujo de trabajo en Dataiku" />
+      <img src="https://prismanalisis.com/wp-content/uploads/2023/10/flujo-dataiku.png" alt="Flujo de trabajo en Dataiku">
     </div>
 
     <div class="contact-info">
