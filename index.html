@@ -116,8 +116,9 @@
     }
 
     .hero p {
-      font-size: 1.2em;
+      font-size: 1.4em;
       margin-bottom: 30px;
+      font-weight: bold;
       opacity: 0.95;
     }
 
@@ -155,6 +156,11 @@
       flex-wrap: wrap;
       gap: 40px;
       align-items: flex-start;
+    }
+
+    .course-text {
+      flex: 1;
+      min-width: 300px;
     }
 
     .course-text h2 {
@@ -243,38 +249,42 @@
     }
 
     /* ========================================
-       BOTÓN "ACERCA DE NOSOTROS"
+       SECCIÓN "¿Querés saber más?"
        ======================================== */
-    .container-about {
+    .about-prompt {
       text-align: center;
       margin: 60px auto;
       padding: 20px;
+      font-size: 1.2em;
+      color: #333;
     }
 
-    .btn-about {
-      display: inline-block;
-      background-color: #003366;
-      color: white;
-      padding: 14px 35px;
-      font-size: 1.1em;
+    .about-prompt a {
+      color: #00b8c7;
       font-weight: 600;
       text-decoration: none;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
-    .btn-about:hover {
-      background-color: #00254d;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    .about-prompt a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========================================
+       SECCIÓN "¿Querés conocer más sobre el curso?"
+       ======================================== */
+    .form-prompt {
+      text-align: center;
+      margin: 60px auto;
+      padding: 20px;
+      font-size: 1.2em;
+      color: #333;
     }
 
     /* ========================================
        FORMULARIO DE GOOGLE
        ======================================== */
     .google-form {
-      margin-top: 50px;
+      margin-top: 30px;
       display: flex;
       justify-content: center;
     }
@@ -297,7 +307,7 @@
        FOOTER
        ======================================== */
     footer {
-      background: linear-gradient(135deg, #a0e0f0, #d0f0ff);
+      background: #e5f2f4; /* Fondo celeste claro */
       background-image: url('assets/images/fondo-footer.jpg');
       background-size: cover;
       background-position: center;
@@ -315,7 +325,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.2);
       z-index: 1;
     }
 
@@ -416,18 +426,9 @@
     }
 
     /* ========================================
-       MEDIA QUERIES (Responsive)
+       MEDIA QUERIES
        ======================================== */
     @media (max-width: 768px) {
-      .brand-logos {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .logo-img {
-        height: 40px;
-      }
-
       .course-info {
         flex-direction: column;
       }
@@ -436,32 +437,8 @@
         max-width: 100%;
       }
 
-      .hero h1 {
-        font-size: 2.3em;
-      }
-
-      .btn, .btn-about {
-        padding: 12px 30px;
-        font-size: 1em;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero {
-        padding: 100px 15px;
-      }
-
-      .hero h1 {
-        font-size: 2em;
-      }
-
-      .container {
-        width: 95%;
-        padding: 0 15px;
-      }
-
-      footer h3 {
-        font-size: 1.5em;
+      .hero p {
+        font-size: 1.2em;
       }
     }
   </style>
@@ -475,6 +452,14 @@
       <img src="assets/logos/dataiku.png" alt="Logo Dataiku" class="logo-img">
     </div>
   </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <div class="logo"></div>
+      <div style="font-size: 1.2em; font-weight: 600;">Prisma Análisis</div>
+    </div>
+  </header>
 
   <!-- Hero -->
   <section class="hero">
@@ -523,11 +508,21 @@
     </div>
   </div>
 
+  <!-- ¿Querés saber más de nosotros? -->
+  <div class="about-prompt">
+    <p>¿Querés saber más de nosotros? <a href="https://prismanalisis.com/acerca-de-prisma/" target="_blank">Visitá nuestro sitio</a></p>
+  </div>
+
   <!-- Botón Acerca de Nosotros -->
   <div class="container-about">
     <a href="https://prismanalisis.com/acerca-de-prisma/" target="_blank" class="btn-about">
       Acerca de Nosotros
     </a>
+  </div>
+
+  <!-- ¿Querés conocer más sobre el curso? -->
+  <div class="form-prompt">
+    <p>¿Querés conocer más sobre el curso? Completá el siguiente formulario:</p>
   </div>
 
   <!-- Formulario de Google -->
