@@ -12,6 +12,7 @@ body {
   line-height: 1.7;
   color: #333;
   background-color: #f9f9fc;
+  scroll-behavior: smooth; /* Suaviza el scroll al hacer clic en "Inscríbete Ahora" */
 }
 
 /* ========================================
@@ -20,7 +21,6 @@ body {
 .brand-bar {
   background-color: white;
   padding: 15px 0;
-  text-align: center;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -33,18 +33,14 @@ body {
   margin: 0 auto;
 }
 
-.logo-prisma {
-  width: 180px;
+.logo-img {
   height: 50px;
-  background: url('https://prismanalisis.com/wp-content/uploads/2022/05/logo-prisma-analisis.svg') no-repeat center;
-  background-size: contain;
+  width: auto;
+  transition: transform 0.2s ease;
 }
 
-.logo-dataiku {
-  width: 160px;
-  height: 40px;
-  background: url('https://www.dataiku.com/dku-static/logo.svg') no-repeat center;
-  background-size: contain;
+.logo-img:hover {
+  transform: scale(1.03);
 }
 
 /* ========================================
@@ -67,8 +63,8 @@ header {
 }
 
 .logo-container .logo {
-  width: 120px;
   height: 50px;
+  width: auto;
   background: url('https://prismanalisis.com/wp-content/uploads/2022/05/logo-prisma-analisis.svg') no-repeat center;
   background-size: contain;
 }
@@ -77,28 +73,16 @@ header {
    HERO (SECCIÓN PRINCIPAL)
    ======================================== */
 .hero {
-  background: linear-gradient(rgba(0, 184, 199, 0.8), rgba(0, 184, 199, 0.8)), url('https://prismanalisis.com/wp-content/uploads/2023/10/hombre-trabajando-laptop.jpg') no-repeat center;
+  background: linear-gradient(rgba(0, 184, 199, 0.8), rgba(0, 184, 199, 0.8)),
+              url('https://prismanalisis.com/wp-content/uploads/2023/10/hombre-trabajando-laptop.jpg') no-repeat center;
   background-size: cover;
   color: white;
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
   position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
-  z-index: 1;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -107,29 +91,32 @@ header {
   font-size: 2.8em;
   margin-bottom: 15px;
   font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero p {
   font-size: 1.2em;
   margin-bottom: 30px;
+  opacity: 0.95;
 }
 
 .btn {
   display: inline-block;
   background: #00b8c7;
   color: white;
-  padding: 14px 30px;
+  padding: 14px 35px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.1em;
   transition: all 0.3s ease;
-  border: none;
+  box-shadow: 0 4px 10px rgba(0, 184, 199, 0.3);
 }
 
 .btn:hover {
   background: #00a0b0;
   transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 184, 199, 0.4);
 }
 
 /* ========================================
@@ -142,24 +129,34 @@ header {
   padding: 0 20px;
 }
 
+/* Título de sección */
+.container h2 {
+  font-size: 2.2em;
+  color: #000;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Detalles del curso */
 .course-info {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   align-items: flex-start;
+  margin-bottom: 40px;
 }
 
-.course-text h2 {
-  font-size: 2.2em;
-  color: #000;
-  margin-bottom: 20px;
-  font-weight: 700;
+.course-text {
+  flex: 1;
+  min-width: 300px;
 }
 
 .course-text ul {
   list-style: disc;
   margin-left: 20px;
   margin-bottom: 30px;
+  line-height: 1.8;
 }
 
 .course-text li {
@@ -179,12 +176,15 @@ header {
   font-size: 1.3em;
   color: #00b8c7;
   margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .details-box p {
   margin-bottom: 10px;
+  font-size: 1.05em;
 }
 
+/* Información de contacto */
 .contact-info {
   margin-top: 40px;
   text-align: center;
@@ -195,6 +195,7 @@ header {
 .contact-info a {
   color: #00b8c7;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .contact-info a:hover {
@@ -215,8 +216,14 @@ header {
 
 .flow-diagram img {
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.flow-diagram img:hover {
+  transform: scale(1.01);
 }
 
 /* ========================================
@@ -237,13 +244,14 @@ header {
   font-weight: 600;
   text-decoration: none;
   border-radius: 6px;
-  transition: background 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .btn-about:hover {
   background-color: #00254d;
   transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 /* ========================================
@@ -261,7 +269,12 @@ header {
   height: 1363px;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.google-form iframe:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 /* ========================================
@@ -274,8 +287,8 @@ footer {
   background-position: center;
   color: #000;
   text-align: center;
-  padding: 40px 0;
-  margin-top: 60px;
+  padding: 50px 20px;
+  margin-top: 80px;
   position: relative;
 }
 
@@ -286,7 +299,7 @@ footer::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   z-index: 1;
 }
 
@@ -295,25 +308,26 @@ footer .content {
   z-index: 2;
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 footer h3 {
-  font-size: 1.6em;
-  margin-bottom: 10px;
-  color: #000;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #003366;
+  font-weight: 600;
 }
 
 footer p {
-  margin: 10px 0;
-  font-size: 1.1em;
+  margin: 8px 0;
+  font-size: 1.05em;
   color: #000;
 }
 
+/* Grid de contacto */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 30px;
   margin: 30px 0;
   text-align: left;
 }
@@ -321,12 +335,12 @@ footer p {
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
 }
 
 .contact-icon {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -334,47 +348,114 @@ footer p {
   color: white;
   border-radius: 50%;
   font-size: 1.2em;
+  flex-shrink: 0;
 }
 
 .contact-text {
-  margin: 0;
-  font-size: 1.1em;
+  font-size: 1.05em;
+  line-height: 1.7;
   color: #000;
 }
 
+/* Enlaces sociales */
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   margin: 30px 0;
+  font-size: 1.3em;
 }
 
 .social-icon {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #00b8c7;
   color: white;
-  font-size: 1.2em;
+  font-weight: bold;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .social-icon:hover {
   background: #00a0b0;
+  transform: translateY(-3px);
 }
 
+/* Descripción y copyright */
 .company-desc {
-  margin: 20px 0;
-  font-size: 1em;
+  margin: 25px 0;
+  font-size: 1.05em;
   color: #000;
+  font-weight: 500;
 }
 
 .copyright {
-  margin-top: 20px;
-  font-size: 0.9em;
+  margin-top: 25px;
+  font-size: 0.95em;
   color: #000;
   opacity: 0.9;
+  font-weight: 500;
+}
+
+/* ========================================
+   MEDIA QUERIES (Responsive)
+   ======================================== */
+@media (max-width: 768px) {
+  .brand-logos {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .course-info {
+    flex-direction: column;
+  }
+
+  .details-box {
+    max-width: 100%;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: 2.3em;
+  }
+
+  .hero p {
+    font-size: 1.1em;
+  }
+
+  .btn, .btn-about {
+    padding: 12px 30px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 100px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .container {
+    width: 95%;
+    padding: 0 15px;
+  }
+
+  footer h3 {
+    font-size: 1.5em;
+  }
 }
