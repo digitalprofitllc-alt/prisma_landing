@@ -21,6 +21,7 @@ body {
 .brand-bar {
   background-color: white;
   padding: 15px 0;
+  text-align: center;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -161,6 +162,11 @@ header {
 .course-text {
   flex: 1;
   min-width: 300px;
+}
+
+.course-text p {
+  margin-bottom: 15px;
+  line-height: 1.7;
 }
 
 .course-text ul {
@@ -318,6 +324,7 @@ footer .content {
   z-index: 2;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 footer h3 {
